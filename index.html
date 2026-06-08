@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +12,13 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
-            background-color: #FAFAFA; /* Clean, almost-white background */
+            background-color: #FAFAFA;
             color: #111;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Premium Text Logo */
         .header {
             width: 100%;
             padding: 30px 0;
@@ -27,39 +27,46 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
             margin-bottom: 50px;
         }
+
         .logo {
             font-size: 24px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            color: #0A2540; 
-        }
-        .logo span {
-            font-weight: 400;
-            color: #00A699; 
+            color: #0A2540;
         }
 
-        /* Hero Section */
+        .logo span {
+            font-weight: 400;
+            color: #00A699;
+        }
+
         .hero {
             text-align: center;
             margin-bottom: 40px;
             padding: 0 20px;
         }
+
         .hero h1 {
             font-size: 32px;
             margin-bottom: 10px;
         }
+
         .hero p {
             color: #666;
             font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
 
-        /* Card Container */
         .grid {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
             width: 100%;
-            max-width: 1000px;
-            padding: 0 20px;
+            max-width: 900px;
+            padding: 0 20px 60px;
+            box-sizing: border-box;
         }
 
         .card {
@@ -67,23 +74,23 @@
             border-radius: 16px;
             overflow: hidden;
             width: 100%;
-            max-width: 400px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
         }
-        
-        /* Smooth hover motion */
+
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
 
-        /* Live YouTube Thumbnail Link */
         .card img {
             width: 100%;
-            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
             display: block;
             border-bottom: 1px solid #eee;
+            background-color: #f3f3f3;
         }
 
         .card-content {
@@ -91,14 +98,40 @@
             text-align: center;
         }
 
-        .card-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin: 0 0 25px 0;
-            line-height: 1.4;
+        .tag {
+            display: inline-block;
+            background-color: #E6FFFB;
+            color: #008f84;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+            letter-spacing: 0.3px;
         }
 
-        /* Buttons */
+        .price {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0A2540;
+            margin-bottom: 18px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            line-height: 1.4;
+            color: #111;
+        }
+
+        .card-desc {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+            margin: 0 0 22px 0;
+        }
+
         .btn-group {
             display: flex;
             flex-direction: column;
@@ -109,7 +142,7 @@
             display: inline-block;
             padding: 14px 20px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             transition: all 0.2s ease;
             font-size: 16px;
@@ -138,8 +171,21 @@
         }
 
         @media (max-width: 500px) {
-            .hero h1 { font-size: 26px; }
-            .card { border-radius: 12px; }
+            .header {
+                margin-bottom: 35px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .card {
+                border-radius: 12px;
+            }
         }
     </style>
 </head>
@@ -150,25 +196,49 @@
     </div>
 
     <div class="hero">
-        <h1>Video Companion Guides</h1>
-        <p>Download the free PDFs to study the phrases we use in the podcast.</p>
+        <h1>Free English Learning Resources</h1>
+        <p>Watch free lessons and download companion guides to study useful phrases from English Flow Podcast.</p>
     </div>
 
     <div class="grid">
+
+        <!-- Old Video Card: Safe, unchanged -->
         <div class="card">
-            <!-- Automatically pulls your thumbnail directly from YouTube -->
             <img src="https://img.youtube.com/vi/i4djUcQAgNU/maxresdefault.jpg" alt="Morning Routine Thumbnail">
-            
+
             <div class="card-content">
+                <span class="tag">FREE GUIDE</span>
                 <h2 class="card-title">My Productive Morning Routine</h2>
-                
+                <p class="card-desc">Download the free companion PDF and watch the full English listening lesson.</p>
+
+                <div class="price">$0</div>
+
                 <div class="btn-group">
                     <a href="english_flow_podcast_guide.pdf" download class="btn btn-primary">⬇️ Download PDF - Free</a>
                     <a href="https://youtu.be/i4djUcQAgNU?si=ILxQrqhuuIX7aGxf" target="_blank" class="btn btn-outline">▶️ Watch Video</a>
                 </div>
             </div>
         </div>
+
+        <!-- New Free Product Card -->
+        <div class="card">
+            <img src="free-product-thumbnail.png" alt="Free English Flow Podcast Lesson Thumbnail">
+
+            <div class="card-content">
+                <span class="tag">FREE PRODUCT</span>
+                <h2 class="card-title">Free English Listening Lesson</h2>
+                <p class="card-desc">A free English Flow Podcast lesson to help you listen, learn useful phrases, and improve daily English.</p>
+
+                <div class="price">$0</div>
+
+                <div class="btn-group">
+                    <a href="https://youtu.be/Ydw12US4fxs?si=k4Yvu3plqdvRMq7Z" target="_blank" class="btn btn-primary">🎧 Get Free Access</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
 </html>
+```
