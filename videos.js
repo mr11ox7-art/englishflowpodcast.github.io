@@ -1,7 +1,8 @@
 const VIDEO_DATA = [
     {
         anchor: "new-video",
-        youtubeId: "oNvM8YVt7Yk",
+        youtubeId: "HF-N541LsHg
+            ",
         title: "The Latest Masterclass",
         description: "Download the exclusive PDF guide that goes with our newest YouTube release.",
         pdfName: "new-video-guide.pdf"
